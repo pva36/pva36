@@ -83,4 +83,7 @@ function sendBinary(inputElement) {
         }
     });
 }
+// function checkSmartphone(): bool {
+//
+// }
 main();

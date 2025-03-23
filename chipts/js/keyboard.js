@@ -76,6 +76,27 @@ export class Keyboard {
                 }
             }
         });
+        // touch events:
+        const virtualKeyContainer = document.getElementById("keyboardContainer");
+        for (const child of virtualKeyContainer.children) {
+            for (const subchild of child.children) {
+                subchild.addEventListener("touchstart", (event) => {
+                    let keyName = event.target.id.replace("button-", "");
+                    this.keyboardDownState[keyName.toLowerCase()] = true;
+                    // console.log(`button ${(event.target as Element).id} touchstarted!`);
+                });
+                subchild.addEventListener("touchend", (event) => {
+                    let keyName = event.target.id.replace("button-", "");
+                    if (!this.insideFx0A) {
+                        this.keyboardDownState[keyName.toLowerCase()] = false;
+                        // console.log(`button ${(event.target as Element).id} touchended!`);
+                    }
+                });
+            }
+        }
+        document.addEventListener("touchstart", (event) => {
+            //const keyName =
+        });
     }
     getKeyboardState() {
         return this.keyboardDownState;

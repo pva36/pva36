@@ -1,4 +1,17 @@
 canvas {
   border: 2px solid black;
   border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.chip8Button {
+  width: 100%;
+  height: 100%;
+}
+
+.chip8ButtonsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 80px;
 }

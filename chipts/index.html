@@ -13,9 +13,49 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container-fluid px-4 py-4 text-center">
+    <div class="container-fluid px-4 py-4 text-center mh-90">
       <div class="container">
         <canvas id="display"></canvas>
+      </div>
+      <div class="collapse" id="keyboardContainer">
+        <div class="chip8ButtonsRow">
+          <button class="chip8Button" id="button-1">1</button>
+          <button class="chip8Button" id="button-2">2</button>
+          <button class="chip8Button" id="button-3">3</button>
+          <button class="chip8Button" id="button-C">C</button>
+        </div>
+        <div class="chip8ButtonsRow">
+          <button class="chip8Button" id="button-4">4</button>
+          <button class="chip8Button" id="button-5">5</button>
+          <button class="chip8Button" id="button-6">6</button>
+          <button class="chip8Button" id="button-D">D</button>
+        </div>
+        <div class="chip8ButtonsRow">
+          <button class="chip8Button" id="button-7">7</button>
+          <button class="chip8Button" id="button-8">8</button>
+          <button class="chip8Button" id="button-9">9</button>
+          <button class="chip8Button" id="button-E">E</button>
+        </div>
+        <div class="chip8ButtonsRow">
+          <button class="chip8Button" id="button-A">A</button>
+          <button class="chip8Button" id="button-0">0</button>
+          <button class="chip8Button" id="button-B">B</button>
+          <button class="chip8Button" id="button-F">F</button>
+        </div>
+      </div>
+      <div class="container-fluid px-4 py-4 text-center">
+        <p>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#keyboardContainer"
+            aria-expanded="false"
+            aria-controls="keyboardContainer"
+          >
+            Toggle Virtual Keyboard
+          </button>
+        </p>
       </div>
       <div class="mb-3">
         <label for="formFile" class="form-label">Load a Rom file</label>
@@ -24,27 +64,7 @@
       <button type="button" class="btn btn-secondary" id="runGame">
         Run Game
       </button>
-      <!-- Debugging -->
-      <div class="form-group">
-        <form id="runInstruction" class="px-4 py-4">
-          <input
-            type="text"
-            pattern="^0x[\da-fA-F]{4}$"
-            class="form-control mx-2 my-2"
-            id="chip8instruction"
-            placeholder="Enter chip8 instruction in hex format: 0xxxx"
-          />
-          <button
-            type="submit"
-            class="btn btn-secondary mx-2 my-2"
-            id="submitInstruction"
-          >
-            Run Instruction
-          </button>
-        </form>
-      </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
